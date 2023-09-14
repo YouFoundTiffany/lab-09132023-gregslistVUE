@@ -1,13 +1,13 @@
 <template>
-    <router-link>
+    <router-link :to="{ name: 'House Details', params: { houseId: house.id } }">
 
         <div class="card house-card bg-light lighten-2 elevation-2">
             <section class="row">
-                <div class="col-12 col-md-6"><img class="house-image" :src="house.imgUrl" alt=""></div>
+                <div class="col-12 col-md-6"><img class="house-image" :src="house.imgUrl" alt=""> </div>
 
                 <div class="col-6">
                     {{ house.year }} {{ house.price }} {{ house.description }}
-                    <div class="w-100"></div>
+                    <div Pclass="w-100"></div>
                 </div>
             </section>
         </div>

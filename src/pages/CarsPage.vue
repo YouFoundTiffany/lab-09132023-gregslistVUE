@@ -20,7 +20,6 @@ import { computed, onMounted } from 'vue';
 import Pop from '../utils/Pop.js';
 import { carsService } from '../services/CarsService.js';
 import { AppState } from '../AppState.js'
-import { logger } from '../utils/Logger.js';
 
 export default {
   setup() {

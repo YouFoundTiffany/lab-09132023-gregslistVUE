@@ -1,10 +1,10 @@
 <template>
     <div class="container">
 
-
+        <HouseForm />
         <section class="row">
             <div v-for="house in houses" :key="house.id" class="col-12 col-md-6">
-                <HouseCard />
+                <HouseCard :house="house" />
 
             </div>
 
@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { computed, onMounted, popScopeId } from 'vue';
+import { computed, onMounted } from 'vue';
 import Pop from '../utils/Pop.js';
 import { housesService } from '../services/HousesService.js';
 import { AppState } from '../AppState.js';
@@ -25,13 +25,12 @@ export default {
         });
         async function getHouses() {
             try {
-                await housesService.getHouses()
-            } catch (error) {
+                await housesService.getHouses();
+            }
+            catch (error) {
                 Pop.error(error)
             }
         }
-
-
         return {
             houses: computed(() => AppState.houses)
         };
