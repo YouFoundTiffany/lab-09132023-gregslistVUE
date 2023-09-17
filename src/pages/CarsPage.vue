@@ -4,7 +4,7 @@
     <CarForm />
 
     <section class="row mt-2 g-3">
-
+      <!-- use v-for for identifying your reusable templates. Must have v-for in top div and then you put in your <TemplateNameCard/>  -->
       <div v-for="car in cars" :key="car.id" class="col-12 col-md-6">
         <!-- {{ car.make }} {{ car.model }} -->
         <CarCard :car="car" />
